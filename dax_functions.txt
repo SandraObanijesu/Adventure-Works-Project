@@ -1,0 +1,7 @@
+DAX FUNCTIONS FOR ADVENTURES WORKS PROJECT
+1. TOTAL REVENUE:
+   SUMX(
+    'Sales Data',
+    'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
+   )
+
