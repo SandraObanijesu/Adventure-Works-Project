@@ -1,7 +1,98 @@
 DAX FUNCTIONS FOR ADVENTURES WORKS PROJECT
-1. TOTAL REVENUE:
+1. Total Revenue =
    SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
    )
 
+2. Total Cost = 
+SUMX(
+    'Sales Data',
+    'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductCost])
+)
+
+
+3. Total Profit =
+[Total Revenue] - [Total Cost]
+
+
+4. Total Orders = 
+DISTINCTCOUNT(
+    'Sales Data'[OrderNumber]
+)
+
+
+5. Total Returns = 
+COUNT(
+    'Returns Data'[ReturnQuantity]
+)
+
+
+6. Total Returned Quantity = 
+SUM(
+    'Returns Data'[ReturnQuantity]
+)
+
+7. Return Rate = 
+DIVIDE( 
+    [Total Returned Quantity], [Total Quantity Sold]
+)
+
+8. Previous Month Revenue = 
+CALCULATE(
+    [Total Revenue],
+    PARALLELPERIOD('Calendar Lookup'[Date],
+    -1,
+    MONTH)
+)
+
+9. Previous Month Profit = 
+CALCULATE(
+    [Total Profit],
+    PARALLELPERIOD( 'Calendar Lookup'[Date],
+    -1,
+    MONTH)
+)
+
+10. Previous Month Orders = 
+CALCULATE(
+    [Total Orders],
+    DATEADD('Calendar Lookup'[Date],
+    -1,
+    MONTH)
+)
+
+11. Previous Month Returns = 
+CALCULATE(
+    [Total Returns],
+    PARALLELPERIOD('Calendar Lookup'[Date],
+    -1,
+    MONTH)
+)
+
+12. Average Retail price = 
+AVERAGE(
+    'Product Lookup'[ProductPrice]
+)
+
+13.  Total Customers = 
+DISTINCTCOUNT('Sales Data'[CustomerKey]
+)
+
+
+14. Average Revenue Per Customer = 
+DIVIDE(
+    [Total Revenue],
+    [Total Customers]
+)
+
+15. Revenue Target = 
+[Previous Month Revenue] * 1.1
+
+
+16. Profit Target = 
+[Previous Month Profit] * 1.1
+
+
+17. Order target = 
+[Previous Month Orders] * 1.1
