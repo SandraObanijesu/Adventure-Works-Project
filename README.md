@@ -66,9 +66,10 @@ In 2021, the Bikes category sold 931 units, driving $1.6 million in revenue and 
 
 
 
-![Alt text](Customer_detail.png)
+
 
 ## Customer Detail
+![Alt text](Customer_detail.png)
 Adventure Works has built a customer base of 17,000, with an average revenue per customer of $1,431. The top customer segments by occupation include professionals, skilled manual workers, and management, reflecting strong engagement among these groups. Customers with an average income level contributed the most orders, totaling 11,600 units over the years.
 
 A review of revenue per customer over time reveals a downward trend. In February 2020, Adventure Works achieved its highest average revenue per customer, at $3,476 across 32 customers. However, this number dropped significantly by July 2020 and continued on a declining trend, albeit at a slower rate. A second major drop occurred in August 2021, with the lowest recorded revenue per customer at $544 among 347 customers.
@@ -78,15 +79,17 @@ Among individual customers, Mr. Maurice Shan emerged as the top revenue contribu
 However, the average revenue per customer continued to decline, indicating that while the customer base is expanding, individual spending has decreased. This trend suggests a potential opportunity to focus on strategies aimed at increasing individual customer spending to drive higher revenue per customer.
 
 
-![Alt text](Product_details.png)
+
 
 ## Product Analysis
+![Alt text](Product_details.png)
 This report page serves as a drillthrough on  product names, offering deeper insights into individual product performance. The gauges indicate that Adventure Works fell short of its monthly KPIs for the selected product, "Fender Set Mountain." A total of 200 orders were recorded, below the target of 242 orders. The product generated $8,946 in monthly revenue, missing the target of $11,000, while profit reached $5,600, also falling short of the $6,720 target.
 
 A price adjustment parameter allows for testing how a 10% increase or decrease in the retail price would impact profit, providing a tool for strategic pricing decisions. Additionally, the product metric selection feature dynamically displays trends for the chosen metric over the years, helping to track long-term performance.
 
 
-![Alt text](Map.png)
+
 
 ## Geographic Orders Overview
+![Alt text](Map.png)
 The map visualizes orders by continent, highlighting key regional insights. Over the years, the highest volume of orders 8,700 units was made in the USA, followed by Australia with 6060 units. In Europe, the United Kingdom leads with 2,771 orders, marking it as the region’s top market.
