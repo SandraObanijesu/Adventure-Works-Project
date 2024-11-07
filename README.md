@@ -87,5 +87,6 @@ A price adjustment parameter allows for testing how a 10% increase or decrease i
 
 
 ![Alt text](Map.png)
-* Geographic Orders Overview
+
+## Geographic Orders Overview
 The map visualizes orders by continent, highlighting key regional insights. Over the years, the highest volume of orders 8,700 units was made in the USA, followed by Australia with 6060 units. In Europe, the United Kingdom leads with 2,771 orders, marking it as the region’s top market.
