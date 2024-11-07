@@ -17,7 +17,7 @@ The primary goal of the Adventure Works is to to track key performance indicator
 
 # Installation 
 The project requires:
-* `powerbi desktop` for data cleaning, transformation, visualization and storytelling.
+* `Power BI Desktop` for data cleaning, transformation, visualization and storytelling.
 
 
 # About the project
