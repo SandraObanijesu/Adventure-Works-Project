@@ -1,44 +1,62 @@
-DAX FUNCTIONS FOR ADVENTURES WORKS PROJECT
-1. Total Revenue =
+
+# DAX Functions
+To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
+1. Base Metrics: This includes the following;
+* Total Revenue =
    SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
    )
 
-2. Total Cost = 
+* Total Cost = 
 SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductCost])
 )
 
-
-3. Total Profit =
+*  Total Profit =
 [Total Revenue] - [Total Cost]
 
 
-4. Total Orders = 
+* Total Orders = 
 DISTINCTCOUNT(
     'Sales Data'[OrderNumber]
 )
 
 
-5. Total Returns = 
+* Total Returns = 
 COUNT(
     'Returns Data'[ReturnQuantity]
 )
 
 
-6. Total Returned Quantity = 
+* Total Returned Quantity = 
 SUM(
     'Returns Data'[ReturnQuantity]
 )
 
-7. Return Rate = 
+* Total Customers = 
+DISTINCTCOUNT('Sales Data'[CustomerKey]
+)
+
+* Average Revenue Per Customer = 
+DIVIDE(
+    [Total Revenue],
+    [Total Customers]
+)
+
+* Return Rate = 
 DIVIDE( 
     [Total Returned Quantity], [Total Quantity Sold]
 )
 
-8. Previous Month Revenue = 
+* Average Retail price = 
+AVERAGE(
+    'Product Lookup'[ProductPrice]
+)
+
+# Time Intelligence Measures
+* Previous Month Revenue = 
 CALCULATE(
     [Total Revenue],
     PARALLELPERIOD('Calendar Lookup'[Date],
@@ -46,7 +64,7 @@ CALCULATE(
     MONTH)
 )
 
-9. Previous Month Profit = 
+* Previous Month Profit = 
 CALCULATE(
     [Total Profit],
     PARALLELPERIOD( 'Calendar Lookup'[Date],
@@ -54,7 +72,7 @@ CALCULATE(
     MONTH)
 )
 
-10. Previous Month Orders = 
+* Previous Month Orders = 
 CALCULATE(
     [Total Orders],
     DATEADD('Calendar Lookup'[Date],
@@ -62,7 +80,7 @@ CALCULATE(
     MONTH)
 )
 
-11. Previous Month Returns = 
+* Previous Month Returns = 
 CALCULATE(
     [Total Returns],
     PARALLELPERIOD('Calendar Lookup'[Date],
@@ -70,29 +88,45 @@ CALCULATE(
     MONTH)
 )
 
-12. Average Retail price = 
-AVERAGE(
-    'Product Lookup'[ProductPrice]
-)
-
-13.  Total Customers = 
-DISTINCTCOUNT('Sales Data'[CustomerKey]
-)
-
-
-14. Average Revenue Per Customer = 
-DIVIDE(
-    [Total Revenue],
-    [Total Customers]
-)
-
-15. Revenue Target = 
+* Revenue Target = 
 [Previous Month Revenue] * 1.1
 
 
-16. Profit Target = 
+* Profit Target = 
 [Previous Month Profit] * 1.1
 
 
-17. Order target = 
+* Order target = 
 [Previous Month Orders] * 1.1
+
+
+
+
+# Calculated Columns
+* Day Of Week = 
+WEEKDAY(
+    'Calendar Lookup'[Date],
+    2
+)
+
+* Day type = 
+IF(
+    'Calendar Lookup'[Day Of Week] IN {6,7} ,
+    "Weekend",
+    "Weekday"
+)
+
+* Price Point = 
+SWITCH(
+    TRUE(),
+    'Product Lookup'[ProductPrice] > 500, "High",
+    'Product Lookup'[ProductPrice] > 100, "Mid-Range",
+    "Low"
+)
+
+* Quantity Type = 
+IF(
+    'Sales Data'[OrderQuantity] > 1,
+     "Multiple Item",
+     "Single Item"
+)
