@@ -17,7 +17,7 @@ The primary goal of the Adventure Works is to to track key performance indicator
 
 # Installation 
 The project requires:
-* `powerbi desktop` for data visualization and storytelling
+* `powerbi desktop` for data cleaning, transformation, visualization and storytelling.
 
 
 # About the project
@@ -26,7 +26,7 @@ In this project, I developed a comprehensive Power BI dashboard to help the mana
 
 
 # The Data Set 
-The dataset used in this project was sourced from Maven Analytics on Udemy, provided in raw form as CSV files. I applied ETL (Extract, Transform, Load) processes, utilizing tools like Power Query to efficiently clean, transform, and load the data. This preparation ensured the dataset was ready for analysis and visualization. 
+The dataset used in this project was sourced from Maven Analytics on Udemy, provided in raw form as CSV files. I applied ETL (Extract, Transform, Load) processes, utilizing tools like Power Query to efficiently clean, transform, and load the data into Power BI Desktop. This preparation ensured the dataset was ready for analysis and visualization. 
 The data cleaning process included the following steps:
 * Header Promotion: Ensured that the first row of data is used as the header for better clarity.
 * Data Type Formatting: Adjusted data types to ensure accurate analysis and compatibility with Power BI.
@@ -65,9 +65,6 @@ However, beginning in Q1 2021, the revenue trend started to recover, showing a p
 In 2021, the Bikes category sold 931 units, driving $1.6 million in revenue and generating $670,300 in profit for the year, demonstrating its critical role in the company's overall profitability.
 
 
-
-
-
 ## Customer Detail
 ![Alt text](Customer_detail.png)
 Adventure Works has built a customer base of 17,000, with an average revenue per customer of $1,431. The top customer segments by occupation include professionals, skilled manual workers, and management, reflecting strong engagement among these groups. Customers with an average income level contributed the most orders, totaling 11,600 units over the years.
@@ -79,15 +76,11 @@ Among individual customers, Mr. Maurice Shan emerged as the top revenue contribu
 However, the average revenue per customer continued to decline, indicating that while the customer base is expanding, individual spending has decreased. This trend suggests a potential opportunity to focus on strategies aimed at increasing individual customer spending to drive higher revenue per customer.
 
 
-
-
 ## Product Analysis
 ![Alt text](Product_details.png)
 This report page serves as a drillthrough on  product names, offering deeper insights into individual product performance. The gauges indicate that Adventure Works fell short of its monthly KPIs for the selected product, "Fender Set Mountain." A total of 200 orders were recorded, below the target of 242 orders. The product generated $8,946 in monthly revenue, missing the target of $11,000, while profit reached $5,600, also falling short of the $6,720 target.
 
 A price adjustment parameter allows for testing how a 10% increase or decrease in the retail price would impact profit, providing a tool for strategic pricing decisions. Additionally, the product metric selection feature dynamically displays trends for the chosen metric over the years, helping to track long-term performance.
-
-
 
 
 ## Geographic Orders Overview
