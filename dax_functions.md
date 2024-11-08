@@ -1,4 +1,4 @@
-## DAX Functions
+-- DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
 # Base Metrics: This includes the following;
 * Total Revenue =
