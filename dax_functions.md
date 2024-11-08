@@ -1,8 +1,6 @@
 ## DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
 # Base Metrics: This includes the following;
-```txt
-```
 Total Revenue =
    SUMX(
     'Sales Data',
@@ -100,8 +98,6 @@ CALCULATE(
 [Previous Month Orders] * 1.1
 
 
-
-
 # Calculated Columns
  Day Of Week = 
 WEEKDAY(
@@ -130,5 +126,4 @@ IF(
      "Multiple Item",
      "Single Item"
   )
-  ```
-  ```
+
