@@ -1,7 +1,7 @@
 # DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
 # Base Metrics: This includes the following;
-*Total Revenue =
+* Total Revenue =
    SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
