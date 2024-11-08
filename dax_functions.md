@@ -1,6 +1,6 @@
 ## DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
-1. Base Metrics: This includes the following;
+# Base Metrics: This includes the following;
 ```txt
 ```
 Total Revenue =
@@ -55,7 +55,7 @@ AVERAGE(
     'Product Lookup'[ProductPrice]
 )
 
- Time Intelligence Measures
+ # Time Intelligence Measures
  Previous Month Revenue = 
 CALCULATE(
     [Total Revenue],
@@ -102,7 +102,7 @@ CALCULATE(
 
 
 
- Calculated Columns
+# Calculated Columns
  Day Of Week = 
 WEEKDAY(
     'Calendar Lookup'[Date],
