@@ -8,48 +8,48 @@ To enhance data analysis and derive meaningful insights, I wrote the following D
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
    )
 
- * Total Cost = 
+ * ```Total Cost = 
 SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductCost])
 )
 
-*  Total Profit =
+* ``` Total Profit =
 [Total Revenue] - [Total Cost]
 
 
-* Total Orders = 
+* ```Total Orders = 
 DISTINCTCOUNT(
     'Sales Data'[OrderNumber]
 )
 
 
-* Total Returns = 
+* ```Total Returns = 
 COUNT(
     'Returns Data'[ReturnQuantity]
 )
 
-* Total Returned Quantity = 
+* ```Total Returned Quantity = 
 SUM(
     'Returns Data'[ReturnQuantity]
 )
 
-* Total Customers = 
+* ```Total Customers = 
 DISTINCTCOUNT('Sales Data'[CustomerKey]
 )
 
-* Average Revenue Per Customer = 
+* ```Average Revenue Per Customer = 
 DIVIDE(
     [Total Revenue],
     [Total Customers]
 )
 
-* Return Rate = 
+*``` Return Rate = 
 DIVIDE( 
     [Total Returned Quantity], [Total Quantity Sold]
 )
 
-* Average Retail price = 
+*``` Average Retail price = 
 AVERAGE(
     'Product Lookup'[ProductPrice]
 )
