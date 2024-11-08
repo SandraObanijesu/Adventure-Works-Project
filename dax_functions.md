@@ -1,7 +1,8 @@
 ## DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
 1. Base Metrics: This includes the following;
-
+```txt
+```
 Total Revenue =
    SUMX(
     'Sales Data',
@@ -128,4 +129,6 @@ IF(
     'Sales Data'[OrderQuantity] > 1,
      "Multiple Item",
      "Single Item"
-)
+  )
+  ```
+  ```
