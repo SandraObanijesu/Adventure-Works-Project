@@ -6,7 +6,7 @@ To enhance data analysis and derive meaningful insights, I wrote the following D
    SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
-   )
+   )```
 
  * Total Cost = 
 SUMX(
