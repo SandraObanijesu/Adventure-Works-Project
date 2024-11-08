@@ -1,4 +1,4 @@
--- DAX Functions
+# DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
 # Base Metrics: This includes the following;
 * ```
@@ -6,7 +6,7 @@ To enhance data analysis and derive meaningful insights, I wrote the following D
    SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
-   )```
+   )
 
  * Total Cost = 
 SUMX(
