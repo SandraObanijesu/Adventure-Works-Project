@@ -17,7 +17,7 @@ SUMX(
 [Total Revenue] - [Total Cost]
 
 
- Total Orders = 
+* Total Orders = 
 DISTINCTCOUNT(
     'Sales Data'[OrderNumber]
 )
