@@ -1,19 +1,19 @@
 ## DAX Functions
 To enhance data analysis and derive meaningful insights, I wrote the following DAX functions to create measures and calculated columns tailored to the project’s needs.
 # Base Metrics: This includes the following;
-Total Revenue =
+* Total Revenue =
    SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
    )
 
- Total Cost = 
+ * Total Cost = 
 SUMX(
     'Sales Data',
     'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductCost])
 )
 
-  Total Profit =
+*  Total Profit =
 [Total Revenue] - [Total Cost]
 
 
@@ -23,38 +23,38 @@ DISTINCTCOUNT(
 )
 
 
- Total Returns = 
+* Total Returns = 
 COUNT(
     'Returns Data'[ReturnQuantity]
 )
 
- Total Returned Quantity = 
+* Total Returned Quantity = 
 SUM(
     'Returns Data'[ReturnQuantity]
 )
 
- Total Customers = 
+* Total Customers = 
 DISTINCTCOUNT('Sales Data'[CustomerKey]
 )
 
- Average Revenue Per Customer = 
+* Average Revenue Per Customer = 
 DIVIDE(
     [Total Revenue],
     [Total Customers]
 )
 
- Return Rate = 
+* Return Rate = 
 DIVIDE( 
     [Total Returned Quantity], [Total Quantity Sold]
 )
 
- Average Retail price = 
+* Average Retail price = 
 AVERAGE(
     'Product Lookup'[ProductPrice]
 )
 
  # Time Intelligence Measures
- Previous Month Revenue = 
+* Previous Month Revenue = 
 CALCULATE(
     [Total Revenue],
     PARALLELPERIOD('Calendar Lookup'[Date],
@@ -62,7 +62,7 @@ CALCULATE(
     MONTH)
 )
 
- Previous Month Profit = 
+* Previous Month Profit = 
 CALCULATE(
     [Total Profit],
     PARALLELPERIOD( 'Calendar Lookup'[Date],
@@ -70,7 +70,7 @@ CALCULATE(
     MONTH)
 )
 
- Previous Month Orders = 
+* Previous Month Orders = 
 CALCULATE(
     [Total Orders],
     DATEADD('Calendar Lookup'[Date],
@@ -78,7 +78,7 @@ CALCULATE(
     MONTH)
 )
 
- Previous Month Returns = 
+* Previous Month Returns = 
 CALCULATE(
     [Total Returns],
     PARALLELPERIOD('Calendar Lookup'[Date],
@@ -86,33 +86,33 @@ CALCULATE(
     MONTH)
 )
 
- Revenue Target = 
+* Revenue Target = 
 [Previous Month Revenue] * 1.1
 
 
- Profit Target = 
+* Profit Target = 
 [Previous Month Profit] * 1.1
 
 
- Order target = 
+* Order target = 
 [Previous Month Orders] * 1.1
 
 
 # Calculated Columns
- Day Of Week = 
+* Day Of Week = 
 WEEKDAY(
     'Calendar Lookup'[Date],
     2
 )
 
- Day type = 
+* Day type = 
 IF(
     'Calendar Lookup'[Day Of Week] IN {6,7} ,
     "Weekend",
     "Weekday"
 )
 
- Price Point = 
+* Price Point = 
 SWITCH(
     TRUE(),
     'Product Lookup'[ProductPrice] > 500, "High",
@@ -120,7 +120,7 @@ SWITCH(
     "Low"
 )
 
- Quantity Type = 
+* Quantity Type = 
 IF(
     'Sales Data'[OrderQuantity] > 1,
      "Multiple Item",
