@@ -11,7 +11,6 @@ The primary goal of the Adventure Works is to to track key performance indicator
 * About the Project
 * The Data Set 
 * The Data Model 
-* DAX Functions 
 * Insights
 
 
